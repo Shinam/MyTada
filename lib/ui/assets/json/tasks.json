@@ -1,0 +1,66 @@
+{
+  "tasks": [
+    {"id": 1,
+      "type": "Audio",
+      "category":"Verification",
+      "sexe": "male",
+      "language": "Fr",
+      "texte": "Nous recherchons des hommes pour réaliser des enregistrements audio de haute qualité. En tant qu'enregistreur, votre rôle consistera à lire et enregistrer des phrases qui vous seront fournies de manière claire et audible, tout en veillant à minimiser le bruit de fond. De plus, il est essentiel de marquer correctement la ponctuation lors de la lecture. Cela signifie que les pauses, les intonations et les emphases doivent respecter les signes de ponctuation présents dans le texte, garantissant ainsi une transcription audio fidèle et naturelle.",
+      "caution": 0.06,
+      "experience": 1.0,
+      "energy": 10.0,
+      "format": "Mission",
+      "brand": "Tada"
+    },
+    {"id": 2,
+      "type": "Audio",
+      "category":"Production",
+      "sexe": "female",
+      "language": "Fr",
+      "texte": "Nous recherchons des hommes pour réaliser des enregistrements audio de haute qualité. En tant qu'enregistreur, votre rôle consistera à lire et enregistrer des phrases qui vous seront fournies de manière claire et audible, tout en veillant à minimiser le bruit de fond. De plus, il est essentiel de marquer correctement la ponctuation lors de la lecture. Cela signifie que les pauses, les intonations et les emphases doivent respecter les signes de ponctuation présents dans le texte, garantissant ainsi une transcription audio fidèle et naturelle.",
+      "caution": 0.06,
+      "experience": 1.0,
+      "energy": 10.0,
+      "format": "Mission",
+      "brand": "Tada"
+
+    },
+    {"id": 3,
+      "type": "Audio",
+      "category":"Verification",
+      "sexe": "male",
+      "language": "Ro",
+      "texte": "Nous recherchons des hommes pour réaliser des enregistrements audio de haute qualité. En tant qu'enregistreur, votre rôle consistera à lire et enregistrer des phrases qui vous seront fournies de manière claire et audible, tout en veillant à minimiser le bruit de fond. De plus, il est essentiel de marquer correctement la ponctuation lors de la lecture. Cela signifie que les pauses, les intonations et les emphases doivent respecter les signes de ponctuation présents dans le texte, garantissant ainsi une transcription audio fidèle et naturelle.",
+      "caution": 0.06,
+      "experience": 1.0,
+      "energy": 10.0,
+      "format": "Mission",
+      "brand": "Tada"
+    },
+
+    {"id": 4,
+      "type": "Classification",
+      "category":"Image",
+      "sexe": "male",
+      "language": "",
+      "texte": "Nous recherchons des hommes pour réaliser des enregistrements audio de haute qualité. En tant qu'enregistreur, votre rôle consistera à lire et enregistrer des phrases qui vous seront fournies de manière claire et audible, tout en veillant à minimiser le bruit de fond. De plus, il est essentiel de marquer correctement la ponctuation lors de la lecture. Cela signifie que les pauses, les intonations et les emphases doivent respecter les signes de ponctuation présents dans le texte, garantissant ainsi une transcription audio fidèle et naturelle.",
+      "caution": 0.01,
+      "experience": 1.0,
+      "energy": 10.0,
+      "format": "Mission",
+      "brand": "Tada"
+    },
+    {"id": 5,
+      "type": "Video",
+      "category":"Production",
+      "sexe": "male",
+      "language": "",
+      "texte": "Nous recherchons des hommes pour réaliser des enregistrements audio de haute qualité. En tant qu'enregistreur, votre rôle consistera à lire et enregistrer des phrases qui vous seront fournies de manière claire et audible, tout en veillant à minimiser le bruit de fond. De plus, il est essentiel de marquer correctement la ponctuation lors de la lecture. Cela signifie que les pauses, les intonations et les emphases doivent respecter les signes de ponctuation présents dans le texte, garantissant ainsi une transcription audio fidèle et naturelle.",
+      "caution": 1.00,
+      "experience": 10.0,
+      "energy": 5.00,
+      "format": "Mission",
+      "brand": "Identt"
+    }
+  ]
+}

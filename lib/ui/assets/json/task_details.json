@@ -1,0 +1,168 @@
+{
+  "task_details": [
+    {
+      "id": 1,
+      "id_task": 1,
+      "type": "Audio",
+      "category": "Vérification",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test.",
+      "sex_consensus": 2,
+      "noise_consensus": 3,
+      "sentence_consensus": 3,
+      "verifier_results": [
+        {
+          "verifier_id": 1,
+          "gender_response": "homme",
+          "gender_correct": true,
+          "noise_response": "Faux",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 2,
+          "gender_response": "femme",
+          "gender_correct": false,
+          "noise_response": "Faux",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 3,
+          "gender_response": "homme",
+          "gender_correct": true,
+          "noise_response": "Faux",
+          "noise_correct": true,
+          "sentence_response": "Ceci est une phrase beaucoup plus longue mais encore plus longue que la précédente..",
+          "sentence_correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "id_task": 2,
+      "type": "Audio",
+      "category": "Vérification",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test.",
+      "sex_consensus": 2,
+      "noise_consensus": 3,
+      "sentence_consensus": 3,
+      "verifier_results": [
+        {
+          "verifier_id": 1,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 2,
+          "gender_response": "female",
+          "gender_correct": false,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 3,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "id_task": 3,
+      "type": "Audio",
+      "category": "Vérification",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test.",
+      "sex_consensus": 2,
+      "noise_consensus": 3,
+      "sentence_consensus": 3,
+      "verifier_results": [
+        {
+          "verifier_id": 1,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 2,
+          "gender_response": "female",
+          "gender_correct": false,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 3,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "id_task": 5,
+      "type": "Audio",
+      "category": "Vérification",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test.",
+      "sex_consensus": 2,
+      "noise_consensus": 3,
+      "sentence_consensus": 3,
+      "verifier_results": [
+        {
+          "verifier_id": 1,
+          "gender_response": "female",
+          "gender_correct": false,
+          "noise_response": "true",
+          "noise_correct": false,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 2,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        },
+        {
+          "verifier_id": 3,
+          "gender_response": "male",
+          "gender_correct": true,
+          "noise_response": "false",
+          "noise_correct": true,
+          "sentence_response": "Ceci est un test.",
+          "sentence_correct": true
+        }
+      ]
+    }
+  ]
+}

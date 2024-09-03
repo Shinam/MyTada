@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853584609148",
+    "project_id": "tadacrash",
+    "storage_bucket": "tadacrash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853584609148:android:0511c31c11dfd3d543aef9",
+        "android_client_info": {
+          "package_name": "com.example.tada_beta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8DLKLgMslCV15BCfKrmDRt1NhPizMiJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

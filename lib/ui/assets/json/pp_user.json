@@ -1,0 +1,76 @@
+{
+  "prizepool_1_shinam":[
+    {
+      "id": 1,
+      "id_task": 1,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Approuvé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    },
+    {
+      "id": 2,
+      "id_task": 2,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Approuvé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    },
+    {
+      "id": 3,
+      "id_task": 3,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Approuvé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    },
+    {
+      "id": 4,
+      "id_task": 4,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "En attente",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    },
+    {
+      "id": 5,
+      "id_task": 5,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Refusé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    },
+    {
+      "id": 6,
+      "id_task": 6,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Approuvé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    }
+  ],
+  "prizepool_2_shinam": [
+    {
+      "id": 666,
+      "id_task": 4,
+      "date": "2024-02-01",
+      "type": "Audio",
+      "status": "Approuvé",
+      "sex": "male",
+      "noise": false,
+      "sentence": "Ceci est un test."
+    }
+  ]
+}
