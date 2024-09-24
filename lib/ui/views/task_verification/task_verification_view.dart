@@ -1,16 +1,11 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:tada_beta/ui/widgets/CustomBackground.dart';
-
 import '../../common/app_colors.dart';
 import '../../widgets/AppBar.dart';
-import '../../widgets/FakeOscillogram.dart';
+import '../../widgets/chat_bubble.dart';
 import 'task_verification_viewmodel.dart';
-
-import 'package:audioplayers/audioplayers.dart';
-
 
 class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
   const TaskVerificationView({Key? key}) : super(key: key);
@@ -21,18 +16,13 @@ class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
     TaskVerificationViewModel viewModel,
     Widget? child,
   ) {
-    // Create an instance of AudioPlayer
-    final AudioPlayer audioPlayer = AudioPlayer();
-    bool isPlaying = false;
-
     return CustomBackground(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: buildCustomAppBar(context, viewModel),
-        extendBodyBehindAppBar:
-        true, // Allow
+        extendBodyBehindAppBar: true, // Allow
         body: Container(
-          padding: EdgeInsets.fromLTRB(16,48,16,32),
+          padding: EdgeInsets.fromLTRB(16, 48, 16, 32),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -45,7 +35,7 @@ class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height : 100,
+                            height: 100,
                             width: 100,
                             child: Icon(
                               Icons.headphones_rounded,
@@ -55,31 +45,47 @@ class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
                               color: kcPrimaryColor,
-                              border: Border.all(width: 7, color: kcPrimaryColorDark.withOpacity(0.8)),
-                      ),
+                              border: Border.all(
+                                  width: 7,
+                                  color: kcPrimaryColorDark.withOpacity(0.8)),
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 32,),
+                    SizedBox(
+                      height: 32,
+                    ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          border: Border.all(width: 1, color: kcGrey)
-                      ),
-                      child: Row(
+                          border: Border.all(width: 1, color: kcGrey)),
+                      child: viewModel.isLoading
+                          ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                          : WaveBubble(
+                        path: viewModel.path,
+                        isSender: true,
+                        appDirectory: viewModel.appDirectory,
+                      ),/*Row(
                         children: [
                           GestureDetector(
-                            onTap: () { viewModel.toggleAudio(); } ,
+                            onTap: () {
+                              viewModel.startOrStopRecording();
+                            },
                             child: Container(
                               padding: EdgeInsets.all(8),
-                              decoration : BoxDecoration(
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 color: kcPrimaryColor,
                               ),
                               child: Icon(
-                                viewModel.isPlaying ? Icons.pause : Icons.play_arrow,
+                                viewModel.isRecording
+                                    ? Icons.pause
+                                    : Icons.play_arrow,
                                 color: Colors.white,
                                 size: 30,
                               ),
@@ -88,34 +94,50 @@ class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
                           SizedBox(
                             width: 16,
                           ),
-                          FakeOscillogram(),
+                          //OscillogramWidget(data: viewModel.oscillogramData),
                         ],
-                      ),
+                      ),*/
                     ),
-                    SizedBox(height: 32,),
+                    SizedBox(
+                      height: 32,
+                    ),
                     Text(
                       "Qu'est ce qui a été dit?",
                       style: TextStyle(color: Colors.white),
                     ),
-                    SizedBox(height: 16,),
-                    RandomWordsDisplay(phrase: "oh non quelque chose s’est mal passé", viewModel: viewModel,),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    RandomWordsDisplay(
+                      phrase: "oh non quelque chose s’est mal passé",
+                      viewModel: viewModel,
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Container(
                       child: Column(
                         children: [
-                          Text("Réponse", style: TextStyle(color: Colors.white),),
-                          SizedBox(height: 8,),
+                          Text(
+                            "Réponse",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
                           Container(
                             padding: EdgeInsets.all(16),
                             width: MediaQuery.of(context).size.width - 32,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(width: 1, color: kcGrey)
-                            ),
+                                border: Border.all(width: 1, color: kcGrey)),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(viewModel.sentence, style: TextStyle(color: Colors.white),),
+                                Text(
+                                  viewModel.sentence,
+                                  style: TextStyle(color: Colors.white),
+                                ),
                               ],
                             ),
                           ),
@@ -158,11 +180,24 @@ class TaskVerificationView extends StackedView<TaskVerificationViewModel> {
       TaskVerificationViewModel();
 }
 
+class TaskVerificationBody extends StatefulWidget {
+  final TaskVerificationViewModel viewModel;
+
+  const TaskVerificationBody({super.key, required this.viewModel});
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+}
+
 class RandomWordsDisplay extends StatefulWidget {
   final String phrase;
   final TaskVerificationViewModel viewModel;
 
-  RandomWordsDisplay({Key? key, required this.phrase, required this.viewModel}) : super(key: key);
+  RandomWordsDisplay({Key? key, required this.phrase, required this.viewModel})
+      : super(key: key);
 
   @override
   _RandomWordsDisplayState createState() => _RandomWordsDisplayState();
@@ -184,11 +219,14 @@ class _RandomWordsDisplayState extends State<RandomWordsDisplay> {
   ];
 
   late List<String> randomAdditionalWords;
+  late List<String>
+      shuffledWords; // Nouvelle variable pour stocker les mots mélangés
 
   @override
   void initState() {
     super.initState();
     _selectRandomWords();
+    _shuffleWords(); // Mélanger les mots lors de l'initialisation
   }
 
   void _selectRandomWords() {
@@ -198,17 +236,20 @@ class _RandomWordsDisplayState extends State<RandomWordsDisplay> {
       ..removeRange(2, additionalWords.length); // Keep only the first 2
   }
 
-  @override
-  Widget build(BuildContext context) {
+  void _shuffleWords() {
     // Split the phrase into words
     List<String> words = widget.phrase.split(' ');
 
     // Combine the words from the phrase and the random additional words
     words.addAll(randomAdditionalWords);
-    // Shuffle the words randomly
-    words.shuffle(Random());
-    words.add("Aucune des propositions");
 
+    // Shuffle the words randomly and store them in shuffledWords
+    shuffledWords = words..shuffle(Random());
+    words.add("Aucune des propositions");
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width - 32,
       padding: EdgeInsets.all(16),
@@ -221,7 +262,7 @@ class _RandomWordsDisplayState extends State<RandomWordsDisplay> {
           Wrap(
             spacing: 12.0, // Space between words
             runSpacing: 8.0, // Space between lines
-            children: words.map((word) {
+            children: shuffledWords.map((word) {
               bool isSelected = widget.viewModel.isSelected(word);
               return GestureDetector(
                 onTap: () {
@@ -232,12 +273,15 @@ class _RandomWordsDisplayState extends State<RandomWordsDisplay> {
                   decoration: BoxDecoration(
                     border: Border.all(color: kcGrey, width: 1),
                     borderRadius: BorderRadius.circular(20),
-                    color: isSelected ? kcPrimaryColor : Colors.transparent, // Change color based on selection
+                    color: isSelected
+                        ? kcPrimaryColor
+                        : Colors.transparent, // Change color based on selection
                   ),
                   child: Text(
                     word,
                     style: TextStyle(
-                      color: Colors.white, // Change text color based on selection
+                      color:
+                          Colors.white, // Change text color based on selection
                     ),
                   ),
                 ),
