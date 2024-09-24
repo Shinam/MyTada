@@ -11,7 +11,6 @@ class TaskDetailsViewModel extends BaseViewModel {
   int _currentIndex = 4;
   final UserService _userService = UserService();
 
-
   int get currentIndex => _currentIndex;
   User? get user => _userService.user;
 
