@@ -17,9 +17,12 @@ dependencies:
   provider: ^6.1.2
   path_provider: ^2.0.11
   json_annotation: ^4.5.0
-  audioplayers: ^6.0.0
-  firebase_core: ^3.3.0
-  firebase_crashlytics: ^4.0.4
+  firebase_core: ^3.5.0
+  firebase_crashlytics: ^4.1.2
+  just_audio: ^0.9.40
+  audio_waveforms: ^1.0.5
+  chat_bubbles: ^1.6.0
+  file_picker: ^8.1.2
 
 dev_dependencies:
   build_runner: ^2.4.5
@@ -41,4 +44,5 @@ flutter:
     - lib/ui/assets/json/pp_user.json
     - lib/ui/assets/json/task_details.json
     - assets/audio/ohnon.m4a
+    - assets/images/logo.png
 
